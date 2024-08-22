@@ -1,6 +1,10 @@
 function encriptarTexto(){
-    const texto = document.getElementById('texto').value;    
-    // const textoEncriptado = texto.replace(/a/g, 'ai').replace(/e/g, 'enter').replace(/i/g, 'imes').replace(/o/g, 'ober').replace(/u/g, 'ufat'); 
+    const texto = document.getElementById('texto').value;       
+
+    if (!filtrarTexto(texto)) {
+        return; 
+    }
+    
     const letras = {
         'a': 'ai',
         'e': 'enter',
@@ -20,7 +24,12 @@ function encriptarTexto(){
 }
 
 function desencriptarTexto(){
-    const texto = document.getElementById('texto').value;    
+    const texto = document.getElementById('texto').value;  
+    
+    if (!filtrarTexto(texto)) {
+        return; 
+    }
+    
      const textoDesencriptado = texto.replace(/ai/g, 'a').replace(/enter/g, 'e')
      .replace(/imes/g, 'i').replace(/ober/g, 'o').replace(/ufat/g, 'u'); 
 
@@ -65,4 +74,26 @@ function copiar() {
         alert("Texto copiado al portapapeles");
     });
 }
+
+function filtrarTexto(texto) {
+    if (texto === "") {
+        modificarElemento('.aside', `<div class="aside-div">
+            <p class="aside-mensaje">Escribe un texto que no contenga mayúsculas, tildes o caracteres especiales.</p>
+        </div>`);
+        return; 
+    }
+
+    if (/[A-Z]/.test(texto)) {
+        alert("El texto no debe contener letras mayúsculas.");
+        return;
+    }
+
+    if (/[^a-z\s]/.test(texto)) {
+        alert("El texto no debe contener tildes ni caracteres especiales.");
+        return;
+    }
+
+    return true; 
+}
+
 
