@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <main class="main">
+        <section>
+            <img class="alura" src="assets/img/Logo.png" alt="">  
+                <div class="cuadro"> 
+                    <textarea class="cuadro-texto" id="texto" placeholder="Ingrese el texto aqui"></textarea>                  
+                                   
+                    <div class="precaucion" >
+                        <img src="assets/img/Group.png" class="precaucion-imagen">     
+                        <p class="precaucion-texto">Solo letras minúsculas y sin acentos</p>
+                    </div>
+                    
+                    <div class="div-botones">                        
+                        <a onclick="encriptarTexto()" id="encriptar" class="boton-encriptar" href="#">Encriptar</a>
+                        <a onclick="desencriptarTexto()" id="desencriptar" class="boton-desencriptar" href="#">Desencriptar</a>                  
+                    </div>                
+                </div>                
+        </section>        
+        <aside class="aside">
+            <div class="aside-div">
+                <img src="assets/img/Muñeco.png" id="cuadro-imagen" alt="dibujo de una persona con una lupa" class="imagen">   
+                <p class="aside-mensaje">Ningún mensaje fue encontrado</p>      
+                <p class="aside-texto">Ingresa el texto que desees encriptar o desencriptar.</p>
+            </div>
+        </aside>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>
